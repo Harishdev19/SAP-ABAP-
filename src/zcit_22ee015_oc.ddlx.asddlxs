@@ -1,0 +1,61 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Sales Item',
+    typeNamePlural: 'Sales Items',
+    title: { type: #STANDARD, label: 'Sales Item', value: 'SalesItemnumber' }
+  }
+}
+annotate entity ZCIT_22EE015_OC with
+{
+  @UI.facet: [
+    {
+      id: 'SalesItems',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Sales Item Details',
+      position: 10
+    }
+  ]
+
+  @UI: { lineItem:       [{ position: 10, label: 'Sales Document' }],
+         identification: [{ position: 10, label: 'Sales Document' }],
+         selectionField: [{ position: 10 }] }
+  SalesDocument;
+
+  @EndUserText.label: 'Sales Item'
+  @UI: { lineItem:       [{ position: 20, label: 'Item Number' }],
+         identification: [{ position: 20, label: 'Item Number' }],
+         selectionField: [{ position: 20 }] }
+  SalesItemnumber;
+
+  @UI: { lineItem:       [{ position: 30, label: 'Material' }],
+         identification: [{ position: 30, label: 'Material' }],
+         selectionField: [{ position: 30 }] }
+  Material;
+
+  @UI: { lineItem:       [{ position: 40, label: 'Plant' }],
+         identification: [{ position: 40, label: 'Plant' }],
+         selectionField: [{ position: 40 }] }
+  Plant;
+
+  @UI: { lineItem:       [{ position: 50, label: 'Quantity' }],
+         identification: [{ position: 50, label: 'Quantity' }] }
+  Quantity;
+
+  @UI: { lineItem:       [{ position: 60, label: 'Quantity Units' }],
+         identification: [{ position: 60, label: 'Quantity Units' }] }
+  Quantityunits;
+
+  @UI: { identification: [{ position: 70, label: 'Created By' }] }
+  LocalCreatedBy;
+
+  @UI: { identification: [{ position: 80, label: 'Created At' }] }
+  LocalCreatedAt;
+
+  @UI: { identification: [{ position: 90, label: 'Last Changed By' }] }
+  LocalLastChangedBy;
+
+  @UI: { identification: [{ position: 100, label: 'Last Changed At' }] }
+  LocalLastChangedAt;
+}
